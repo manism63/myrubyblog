@@ -1,6 +1,7 @@
 <h1> Blog POsts </h1>
-<h3> Sample Posts </h3>
-<p> <%= @content_first%> </p>
-<br>
-<h3> Sample Posts </h3>
-<p> <%= @content_second%>  </p>
+<% @posts.each do |post| %>
+	<h3> <%= link_to post.title, post %> </h3>
+	<br>
+<% end %>
+
+<%= link_to "New Post", new_post_path %>
