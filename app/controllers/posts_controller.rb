@@ -38,12 +38,13 @@ class PostsController < ApplicationController
 			# render "edit"
 		# end
 		@post.update(post_params)
+		redirect_to post_path
 	end
 	def post_params
 	# we construct a strong parameters whitelist below
 	# require(:post) means that the `params` hash MUST contain a :post key
 	# permit(:title, :body, ...) = here we enumerate the attributes which we will accept from the form parameters; it acts as a whitelist
-	params.require(:post).permit(:title, :body) 
+	params.require(:post).permit(:title, :body, :category_id) 
 	end	
 	def destroy
 		@post = Post.find(params[:id])
