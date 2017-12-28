@@ -1,4 +1,4 @@
-<h1><%= @post.title %></h1> 
+<h2><%= @post.title %></h2> 
 Category : <%= link_to @post.category.name, category_path(:id => @post.category.id) %> || 
 <small>  <%= @post.created_at.strftime("%b %d, %Y") %>
 <p><%= @post.body %></p>
